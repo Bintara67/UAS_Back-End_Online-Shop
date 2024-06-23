@@ -29,6 +29,13 @@ class UsersModel {
         return $stmt->get_result()->fetch_assoc();
     }
 
+    public function getUserByUsernameOrEmail($username, $email) {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
+        $stmt->bind_param("ss", $username, $email);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
+
     public function getAllUsers() {
         $result = $this->db->query("SELECT * FROM users");
         $users = [];
