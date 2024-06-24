@@ -263,9 +263,9 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 5. **Buat file `.env` di direktori root proyek dan tambahkan konfigurasi database Anda:**
     ```sh
     DB_HOST=localhost
-DB_NAME=onlineShop_db
-DB_USERNAME=root
-DB_PASSWORD=password
+    DB_NAME=onlineShop_db
+    DB_USERNAME=root
+    DB_PASSWORD=password
     ```
 
 6. **Siapkan Postman untuk Menguji API:**
