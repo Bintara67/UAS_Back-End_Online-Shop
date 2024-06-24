@@ -159,39 +159,37 @@ One-to-many relationship between product and transaction: Setiap produk dapat me
 ## ⚙️ Struktur Proyek
 
 ```
-backend-toko-sepatu/
+UAS_Back-End_Online-Shop/
 │
 ├── config/ ⚙️
 │   ├── database.php 
 │   └── table.php 
 │
 ├── controllers/ 🕹️
-│   ├── KategoriController.php 
-│   ├── PesananController.php 
-│   ├── ProdukController.php 
+│   ├── ProductsController.php 
+│   ├── StocksController.php 
+│   ├── TransactionsController.php 
 │   └── UsersController.php 
 │
 ├── middleware/ 🔧
-│   ├── Authentication.php 
 │   └── Router.php 
 │
 ├── models/ 🗃️
-│   ├── KategoriModel.php 
-│   ├── PesananModel.php 
-│   ├── ProdukModel.php 
+│   ├── ProductsModel.php 
+│   ├── StocksModel.php 
+│   ├── TransactionsModel.php 
 │   └── UsersModel.php 
 │
 ├── services/ 🛠️
-│   ├── KategoriService.php 
-│   ├── PesananService.php 
-│   ├── ProdukService.php 
+│   ├── ProductsService.php 
+│   ├── StocksService.php 
+│   ├── TransactionsService.php 
 │   └── UsersService.php 
 │
 ├── .env 🌐
 ├── .htaccess 🛡️
 ├── app.php 📝
-├── db_toko_sepatu.sql 🗄️
-├── License.md 🪪
+├── db_onlineshop.sql 🗄️
 ├── README.md 📚
 ```
 
@@ -201,7 +199,7 @@ Berikut adalah deskripsi singkat dari setiap file dan direktori:
 1. **.env**:
    - Berisi konfigurasi lingkungan seperti detail koneksi database.
 
-2. **db_kasir.sql**:
+2. **db_onlineshop.sql**:
    - File SQL yang berisi skrip untuk membuat database dan tabel yang diperlukan.
      
 3. **.htaccess**:
@@ -215,23 +213,25 @@ Berikut adalah deskripsi singkat dari setiap file dan direktori:
    - `table.php`: Mengandung array yang memetakan nama tabel di database.
 
 6. **controllers/**:
-   - `MembersController.php`: Mengatur operasi CRUD untuk members.
    - `ProductsController.php`: Mengatur operasi CRUD untuk produk.
-   - `SalesController.php`: Mengatur operasi CRD untuk penjualan.
-
+   - `StocksController.php`: Mengatur operasi CRUD untuk stok.
+   - `TransactionsController.php`: Mengatur operasi CRUD untuk transaksi.
+   - `UsersController.php`: Mengatur operasi CRUD untuk user.
+     
 7. **middleware/**:
-   - `Router.php`: Kelas `Router` untuk mengatur rute dan menghubungkan dengan action yang sesuai.
+   - `Router.php`: Kelas `Router` untuk mengatur rute dan menghubungkan dengan aksi yang sesuai.
 
 8. **models/**:
-   - `MembersModel.php`: Model untuk operasi database terkait members.
    - `ProductsModel.php`: Model untuk operasi database terkait produk.
-   - `SalesModel.php`: Model untuk operasi database terkait penjualan.
-
-9. **services/**:
-   - `MembersService.php`: Layanan untuk operasi logika bisnis terkait members.
+   - `StocksModel.php`: Model untuk operasi database terkait stok.
+   - `TransactionsModel.php`: Model untuk operasi database terkait transaksi.
+   - `UsersModel.php`: Model untuk operasi database terkait user.
+     
+10. **services/**:
    - `ProductsService.php`: Layanan untuk operasi logika bisnis terkait produk.
-   - `SalesService.php`: Layanan untuk operasi logika bisnis terkait penjualan.
-
+   - `StocksService.php`: Layanan untuk operasi logika bisnis terkait stok.
+   - `TransactionsService.php`: Layanan untuk operasi logika bisnis terkait transaksi.
+   - `UsersService.php`: Layanan untuk operasi logika bisnis terkait user.
 
 ## 📝 Petunjuk Penggunaan
 Langkah-langkah untuk menginstal proyek ini secara lokal:
@@ -240,7 +240,7 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 
 1. Clone repositori ini:
     ```sh
-    git clone https://github.com/username/toko-serba-ada.git
+    
     ```
     
 2. **Membuka Proyek di Editor Terpilih:**
