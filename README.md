@@ -160,7 +160,11 @@ One-to-many relationship between product and transaction: Setiap produk dapat me
 
 ```
 UAS_Back-End_Online-Shop/
-│
+├── assets/
+|    └── img/
+|        ├──Screenshot 2024-05-14 100607.png
+|        └──Screenshot 2024-06-24 143951.png
+|
 ├── config/ ⚙️
 │   ├── database.php 
 │   └── table.php 
@@ -188,9 +192,9 @@ UAS_Back-End_Online-Shop/
 │
 ├── .env 🌐
 ├── .htaccess 🛡️
+├── README.md 📚
 ├── app.php 📝
 ├── db_onlineshop.sql 🗄️
-├── README.md 📚
 ```
 
 ### Penjelasan
@@ -273,41 +277,44 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 
 
 
-## 🔍 Refleksi Diri terhadap Proyek Pengembangan Sistem Manajemen Toko Online Sederhana
+## 🔍 Evaluasi Proyek Pengembangan Sistem Manajemen Toko Online Sederhana
 
-Dalam proses pengembangan aplikasi kasir sederhana ini, terdapat beberapa tantangan dan kesulitan yang saya hadapi, serta berbagai strategi yang saya gunakan untuk mengatasinya.
+Selama proses membuat sistem manajemen toko online sederhana ini, saya menghadapi beberapa masalah dan kesulitan, dan saya menemukan beberapa cara untuk menyelesaikannya.
 
-### Tantangan dan Kesulitan
+### Kesukitan dan Tantangan
 
-1. **Desain Arsitektur dan Pemisahan Tanggung Jawab**
-   - **Tantangan**: Merancang struktur proyek yang modular dan mudah dikelola membutuhkan banyak pertimbangan, terutama dalam hal pemisahan tanggung jawab antar komponen (controller, model, service).
-   - **Cara Mengatasi**: Saya memutuskan untuk menerapkan pola arsitektur MVC (Model-View-Controller) yang jelas dan terstruktur. Ini membantu menjaga agar setiap komponen memiliki tanggung jawab spesifik dan meminimalkan keterikatan antara bagian-bagian yang berbeda dari kode.
+1. **Desain Arsitektur dan Pemisahan Tanggung Jawab:**
+   - **Tantangan**: Merancang struktur proyek yang modular dan mudah dikelola membutuhkan banyak pertimbangan, terutama dalam hal pemisahan tanggung jawab antar komponen (kontroler, model, dan layanan).
+   - **Cara Mengatasi**: Saya memilih untuk menerapkan pola arsitektur Model-View-Controller (MVC) yang jelas dan terstruktur. Ini membantu menjaga agar setiap bagian memiliki tanggung jawab khusus, sehingga mengurangi keterikatan antara bagian kode yang berbeda.
 
 2. **Pengelolaan Koneksi Database**
    - **Tantangan**: Mengatur koneksi database yang aman dan efisien merupakan tantangan, terutama dalam hal mengelola konfigurasi dan koneksi ulang.
-   - **Cara Mengatasi**: Saya menggunakan file `.env` untuk menyimpan konfigurasi lingkungan secara aman. Selain itu, saya merancang kelas `Database` dengan metode `getConnection()` yang memastikan hanya satu koneksi yang aktif pada satu waktu, yang membantu mengurangi beban pada server database.
-
+   - **Cara Mengatasi**: Saya menggunakan file `.env` untuk menyimpan konfigurasi lingkungan secara aman. Selain itu, saya merancang kelas `Database` dengan metode `getConnection()` yang memastikan hanya satu koneksi yang aktif pada satu waktu, yang membantu mengurangi                          beban pada server database.
+     
 3. **Penulisan Ulang URL dengan `.htaccess`**
    - **Tantangan**: Mengkonfigurasi penulisan ulang URL untuk mengarahkan semua permintaan melalui satu titik masuk (`app.php`) tidaklah mudah, terutama dalam menangani berbagai skenario permintaan.
    - **Cara Mengatasi**: Saya mempelajari dokumentasi `.htaccess` dan melakukan beberapa percobaan hingga menemukan aturan yang tepat untuk mengarahkan semua permintaan ke `app.php` tanpa mengganggu akses ke file dan direktori statis.
 
 4. **Validasi dan Sanitasi Input**
-   - **Tantangan**: Menangani validasi dan sanitasi input pengguna untuk mencegah SQL injection dan serangan XSS merupakan aspek kritis dalam pengembangan aplikasi web.
-   - **Cara Mengatasi**: Saya menggunakan PDO dengan prepared statements untuk menghindari SQL injection. Selain itu, saya menambahkan lapisan validasi di tingkat service untuk memastikan bahwa semua input yang diterima sesuai dengan kriteria yang diharapkan sebelum diteruskan ke model.
-
+   - **Tantangan**: Menangani validasi dan sanitasi input pengguna untuk mencegah SQL injection dan serangan XSS merupakan komponen penting dalam pengembangan aplikasi web.
+   - **Cara Mengatasi**: Saya menggunakan PDO dengan statement yang telah disiapkan untuk menghindari SQL injection. Saya juga menambahkan lapisan validasi di tingkat service untuk memastikan bahwa semua input yang diterima memenuhi kriteria yang diharapkan sebelum                              diteruskan ke model.
 5. **Pengujian dan Debugging**
-   - **Tantangan**: Mengidentifikasi dan memperbaiki bug, serta memastikan bahwa semua fungsionalitas bekerja sebagaimana mestinya, merupakan proses yang memakan waktu dan menantang.
-   - **Cara Mengatasi**: Saya menerapkan pengujian unit pada metode-metode kunci di service dan model. Selain itu, saya menggunakan alat debugging PHP dan menambahkan log pada titik-titik penting dalam aplikasi untuk memudahkan identifikasi masalah.
+   - **Tantangan**: Menemukan dan memperbaiki bug serta memastikan bahwa semua fungsionalitas bekerja sebagaimana mestinya adalah proses yang memakan waktu dan menantang.
+   - **Cara Mengatasi**: Saya menerapkan pengujian unit pada metode-metode penting di service dan model. Selain itu, untuk membantu menemukan masalah, saya menggunakan alat debugging PHP dan menambahkan log pada titik-titik penting dalam aplikasi.
 
-6. **Performance dan Scalability**
-   - **Tantangan**: Memastikan aplikasi berjalan efisien dan dapat diskalakan untuk menangani jumlah pengguna yang banyak.
-   - **Cara Mengatasi**: Saya merancang aplikasi dengan prinsip-prinsip terbaik dalam pengelolaan resource, seperti menggunakan koneksi database yang efisien dan mengoptimalkan query SQL. Selain itu, saya mempertimbangkan penggunaan caching untuk mengurangi beban pada database.
+6. **Kinerja dan Skalabilitas**
+   - **Tantangan**: Memastikan aplikasi berjalan dengan efisien dan dapat diskalakan untuk menangani jumlah pengguna yang besar.
+   - **Solusi**: Saya merancang aplikasi menggunakan prinsip-prinsip terbaik dalam pengelolaan sumber daya, seperti menggunakan koneksi database yang efisien dan mengoptimalkan query SQL, serta mempertimbangkan penggunaan caching untuk mengurangi beban database.
 
-### Pembelajaran dan Pengembangan Diri
+## Pembelajaran dan Peningkatan Diri
 
-Selama proses pengembangan ini, saya banyak belajar tentang pentingnya perencanaan yang matang dan desain arsitektur yang baik. Saya juga menyadari bahwa pengelolaan konfigurasi lingkungan dan keamanan aplikasi merupakan aspek yang sangat penting yang tidak boleh diabaikan. Selain itu, saya mendapatkan pengalaman berharga dalam menggunakan berbagai alat dan teknik untuk pengujian dan debugging, yang sangat membantu dalam memastikan kualitas dan stabilitas aplikasi.
+Pembelajaran dan Peningkatan Diri
 
-Ke depannya, saya berharap dapat menerapkan pengalaman dan pengetahuan yang saya peroleh dari proyek ini untuk proyek-proyek lainnya, serta terus mengembangkan keterampilan saya dalam pengembangan aplikasi web yang lebih kompleks dan canggih.
+Saya banyak belajar tentang pentingnya perencanaan yang matang dan desain arsitektur yang baik selama proses pengembangan ini. Selain itu, saya menyadari bahwa keamanan aplikasi dan pengelolaan konfigurasi lingkungan merupakan komponen yang sangat penting yang tidak boleh diabaikan. Selain itu, saya memperoleh pengalaman berharga dalam pengujian dan debugging berbagai alat dan teknik, yang sangat membantu dalam menjamin kualitas dan stabilitas aplikasi.
+
+Ke depannya, saya berharap dapat memperluas keterampilan saya dalam mengembangkan aplikasi web yang lebih kompleks dan canggih dan memanfaatkan pengetahuan dan pengalaman yang saya peroleh dari proyek ini untuk proyek lain.
+
+
 
 
 *Fajar Bintara*
