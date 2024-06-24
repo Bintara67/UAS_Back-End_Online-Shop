@@ -12,46 +12,44 @@ class TransactionsController {
     public function getAllTransactions($limit = 10, $offset = 0, $filter = []) {
         try {
             $transactions = $this->transactionsService->getAllTransactions($limit, $offset, $filter);
-            // Return transactions
+            return $transactions;
         } catch (Exception $e) {
-            // Handle exception
+            throw new Exception("Error deleting product: " . $e->getMessage());
         }
     }
 
     public function getTransactionById($transactionId) {
         try {
             $transaction = $this->transactionsService->getTransactionById($transactionId);
-            // Return transaction
+            return $transaction;
         } catch (Exception $e) {
-            // Handle exception
+            throw new Exception("Error deleting product: " . $e->getMessage());
         }
     }
 
     public function addTransaction($transactionData) {
         try {
             $transactionId = $this->transactionsService->addTransaction($transactionData);
-            // Return transactionId
+            return $transactionId;
         } catch (Exception $e) {
-            // Handle exception
+            throw new Exception("Error deleting product: " . $e->getMessage());
         }
     }
 
 // Menambahkan method updateTransaction ke dalam class TransactionsController
 public function updateTransaction($transactionId, $updatedData) {
     try {
-        $result = $this->transactionsService->updateTransaction($transactionId, $updatedData);
-        // Return result
+        return $this->transactionsService->updateTransaction($transactionId, $updatedData);
     } catch (Exception $e) {
-        // Handle exception
+        throw new Exception("Error deleting product: " . $e->getMessage());
     }
 }
 
     public function deleteTransaction($transactionId) {
         try {
-            $result = $this->transactionsService->deleteTransaction($transactionId);
-            // Return result
+            return $this->transactionsService->deleteTransaction($transactionId);
         } catch (Exception $e) {
-            // Handle exception
+            throw new Exception("Error deleting product: " . $e->getMessage());
         }
     }
 }
