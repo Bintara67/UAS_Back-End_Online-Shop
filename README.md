@@ -154,7 +154,7 @@ Relasi antar tabel-tabel dalam desain database diatas:
 
 One-to-many relationship between product and stock: Setiap produk dapat memiliki beberapa catatan perubahan stok.
 One-to-many relationship between product and transaction: Setiap produk dapat menjadi bagian dari beberapa transaksi.
-(Potential) One-to-many relationship between user and stock: Setiap pengguna dapat membuat beberapa perubahan stok (jika kolom pengguna direferensikan dengan benar ke user_id).
+(Potential) One-to-many relationship between user and stock: Setiap pengguna dapat membuat beberapa perubahan stok (jika kolom user direferensikan dengan benar ke user_id).
 
 ## ⚙️ Struktur Proyek
 
@@ -240,7 +240,7 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 
 1. Clone repositori ini:
     ```sh
-    
+    git clone https://github.com/Bintara67/UAS_Back-End_Online-Shop.git
     ```
     
 2. **Membuka Proyek di Editor Terpilih:**
@@ -256,16 +256,16 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 4. **Import Database untuk sistem aplikasi kasir sederhana:**
   - Buka phpMyAdmin, alat bantu web untuk mengelola database MySQL.
   - Pilih database yang ingin Anda gunakan atau buat database baru dengan nama yang sesuai.
-  - Impor file `db_kasir.sql` ke dalam database yang dipilih.
-  - Alternatively, jalankan query SQL dari file `db_kasir.sql` untuk membuat database dan tabel yang diperlukan secara manual.
+  - Impor file `db_onlineshop.sql` ke dalam database yang dipilih.
+  - Alternatively, jalankan query SQL dari file `db_onlineshop.sql` untuk membuat database dan tabel yang diperlukan secara manual.
   - Pastikan proses import database berhasil dan semua tabel dan data telah termuat dengan benar.
 
 5. **Buat file `.env` di direktori root proyek dan tambahkan konfigurasi database Anda:**
     ```sh
     DB_HOST=localhost
-    DB_NAME=kasir
-    DB_USERNAME=admin
-    DB_PASSWORD=admin123
+DB_NAME=onlineShop_db
+DB_USERNAME=root
+DB_PASSWORD=password
     ```
 
 6. **Siapkan Postman untuk Menguji API:**
@@ -273,7 +273,7 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 
 
 
-## 🔍 Refleksi Diri terhadap Proyek Pengembangan Aplikasi Kasir Sederhana
+## 🔍 Refleksi Diri terhadap Proyek Pengembangan Sistem Manajemen Toko Online Sederhana
 
 Dalam proses pengembangan aplikasi kasir sederhana ini, terdapat beberapa tantangan dan kesulitan yang saya hadapi, serta berbagai strategi yang saya gunakan untuk mengatasinya.
 
