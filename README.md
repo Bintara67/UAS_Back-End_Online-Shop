@@ -282,4 +282,4 @@ Selama proses pengembangan ini, saya banyak belajar tentang pentingnya perencana
 Ke depannya, saya berharap dapat menerapkan pengalaman dan pengetahuan yang saya peroleh dari proyek ini untuk proyek-proyek lainnya, serta terus mengembangkan keterampilan saya dalam pengembangan aplikasi web yang lebih kompleks dan canggih.
 
 
-*Galang Buana*
+*Fajar Bintara*
