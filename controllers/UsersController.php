@@ -1,5 +1,4 @@
 <?php
-// include_once '../config/database.php'; 
 include_once 'models/UsersModel.php';
 include_once 'services/UsersService.php';
 
