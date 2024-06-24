@@ -281,7 +281,7 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
 
 Selama proses membuat sistem manajemen toko online sederhana ini, saya menghadapi beberapa masalah dan kesulitan, dan saya menemukan beberapa cara untuk menyelesaikannya.
 
-### Kesukitan dan Tantangan
+### Kesulitan dan Tantangan
 
 1. **Desain Arsitektur dan Pemisahan Tanggung Jawab:**
    - **Tantangan**: Merancang struktur proyek yang modular dan mudah dikelola membutuhkan banyak pertimbangan, terutama dalam hal pemisahan tanggung jawab antar komponen (kontroler, model, dan layanan).
@@ -308,13 +308,8 @@ Selama proses membuat sistem manajemen toko online sederhana ini, saya menghadap
 
 ## Pembelajaran dan Peningkatan Diri
 
-Pembelajaran dan Peningkatan Diri
-
 Saya banyak belajar tentang pentingnya perencanaan yang matang dan desain arsitektur yang baik selama proses pengembangan ini. Selain itu, saya menyadari bahwa keamanan aplikasi dan pengelolaan konfigurasi lingkungan merupakan komponen yang sangat penting yang tidak boleh diabaikan. Selain itu, saya memperoleh pengalaman berharga dalam pengujian dan debugging berbagai alat dan teknik, yang sangat membantu dalam menjamin kualitas dan stabilitas aplikasi.
 
 Ke depannya, saya berharap dapat memperluas keterampilan saya dalam mengembangkan aplikasi web yang lebih kompleks dan canggih dan memanfaatkan pengetahuan dan pengalaman yang saya peroleh dari proyek ini untuk proyek lain.
-
-
-
 
 *Fajar Bintara*
