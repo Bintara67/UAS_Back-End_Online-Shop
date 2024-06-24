@@ -78,7 +78,7 @@ class TransactionsModel {
                 $stmt->bindParam(':price', $item['price'], PDO::PARAM_STR);
                 $stmt->execute();
             }
-
+          
             $this->db->commit();
             return $transactionId;
         } catch (PDOException $e) {
@@ -88,6 +88,30 @@ class TransactionsModel {
             $this->db->rollBack();
             throw $e;
         }
+    }
+
+        // Memperbarui transaksi berdasarkan ID dengan data yang diperbarui
+        public function updateTransaction($transactionId, $updatedData) {
+            $query = "UPDATE transactions SET ";
+            $params = [];
+            
+            foreach ($updatedData as $key => $value) {
+                $query .= "$key = :$key, ";
+                $params[":$key"] = $value;
+            }
+            
+            $query = rtrim($query, ', '); // Menghapus koma terakhir
+            
+            $query .= " WHERE id = :transactionId";
+            $params[':transactionId'] = $transactionId;
+            
+            $stmt = $this->db->prepare($query);
+            foreach ($params as $key => $val) {
+                $stmt->bindParam($key, $val);
+            }
+            
+            $stmt->execute();
+        return $stmt->rowCount();
     }
 
     // Menghapus transaksi dengan validasi
