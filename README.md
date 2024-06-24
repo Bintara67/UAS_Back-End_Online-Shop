@@ -157,29 +157,42 @@ One-to-many relationship between product and transaction: Setiap produk dapat me
 (Potential) One-to-many relationship between user and stock: Setiap pengguna dapat membuat beberapa perubahan stok (jika kolom pengguna direferensikan dengan benar ke user_id).
 
 ## ⚙️ Struktur Proyek
-```sh
-/UAS_Back-End_Online-Shop
-├── app.php
-├── db_onlineShop.sql
-├── .env
-├── .htaccess
-├── config/
-│   ├── database.php
-│   └── table.php
-├── controllers/
-│   ├── ProductsController.php
-│   ├── StocksController.php
-│   └── TransactionsController.php
-├── middleware/
-│   └── Router.php
-├── models/
-│   ├── ProductsModel.php
-│   ├── StocksModel.php
-│   └── TransactionsModel.php
-└── services/
-    ├── ProductsService.php
-    ├── StocksService.php
-    └── TransactionsService.php
+
+```
+backend-toko-sepatu/
+│
+├── config/ ⚙️
+│   ├── database.php 
+│   └── table.php 
+│
+├── controllers/ 🕹️
+│   ├── KategoriController.php 
+│   ├── PesananController.php 
+│   ├── ProdukController.php 
+│   └── UsersController.php 
+│
+├── middleware/ 🔧
+│   ├── Authentication.php 
+│   └── Router.php 
+│
+├── models/ 🗃️
+│   ├── KategoriModel.php 
+│   ├── PesananModel.php 
+│   ├── ProdukModel.php 
+│   └── UsersModel.php 
+│
+├── services/ 🛠️
+│   ├── KategoriService.php 
+│   ├── PesananService.php 
+│   ├── ProdukService.php 
+│   └── UsersService.php 
+│
+├── .env 🌐
+├── .htaccess 🛡️
+├── app.php 📝
+├── db_toko_sepatu.sql 🗄️
+├── License.md 🪪
+├── README.md 📚
 ```
 
 ### Penjelasan
