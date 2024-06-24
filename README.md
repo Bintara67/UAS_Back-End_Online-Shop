@@ -96,19 +96,18 @@ project sederhana ini merupakan sebuah sistem berbasis web yang memungkinkan pen
    - Respon: Mengembalikan pesan konfirmasi yang menunjukkan pengguna telah dihapus.
 
 
-## 🏗️ Gambaran Arsitektur Teknologi
+## 🏗️ Gambaran Tech Stack yang digunakan
 
 ### Penjelasan
 ![image](https://github.com/galangbuana/Uas-AplikasiKasir-Backend/assets/162245644/407eaeaa-6ef1-480e-9d8d-6b68b006b3d8)
 
-Penjelasan singkat mengenai  gambaran arsitektur teknologi yang digunakan:
+Penjelasan singkat mengenai Tech Stack yang digunakan:
 
-- **User Interface**: Tampilan antarmuka yang memungkinkan pengguna berinteraksi langsung dengan sistem melalui web browser.
-- **PHP**: Bahasa pemrograman PHP digunakan untuk menjalankan logika bisnis utama sistem aplikasi kasir sederhana. Hal ini meliputi manipulasi data member, validasi input pengguna, penjualan, produk dan berbagai pemrosesan bisnis penting lainnya.
-- **MySQL**: Sistem menggunakan database MySQL untuk menyimpan seluruh data yang terkait dengan sistem aplikasi kasir sederhana.
-- **Apache Web Server**: Apache Web Server berperan sebagai perantara, menerima permintaan dari browser pengguna dan meneruskannya ke REST API yang sesuai.
-- **REST API**: REST API bertindak sebagai jembatan antara tampilan antarmuka pengguna (front-end) dan logika bisnis di balik layar (back-end). API ini menerima permintaan dari server web, melakukan operasi yang diperlukan, dan memberikan respons yang sesuai.
-  
+- **Apache**: Apache adalah server web open-source yang populer dan digunakan secara luas untuk menghosting aplikasi web. Apache akan digunakan untuk melayani permintaan HTTP dari klien (browser web) dan mentransfer respons yang sesuai. 
+- **Rest API**: Rest API adalah arsitektur gaya arsitektur pemrograman antarmuka yang mendefinisikan seperangkat aturan untuk pertukaran data antara aplikasi web. Rest API akan digunakan untuk mengekspos fungsionalitas sistem manajemen inventaris toko online kepada                     klien, seperti menambahkan produk baru, mengedit informasi produk, dan melihat daftar transaksi. 
+- **PHP**: PHP adalah bahasa pemrograman skrip sisi server yang populer dan digunakan secara luas untuk mengembangkan aplikasi web dinamis. PHP akan digunakan untuk menulis kode backend sistem manajemen inventaris toko online, termasuk logika bisnis, akses database,               dan komunikasi dengan Rest API. 
+- **MySQL**: MySQL adalah sistem manajemen basis data relasional open-source yang populer dan digunakan secara luas untuk menyimpan data aplikasi web. MySQL akan digunakan untuk menyimpan data sistem manajemen inventaris toko online, seperti informasi produk, stok, dan              transaksi.
+   
 ## 🗃️ ERD
 ![Untitled Diagram-Page-14 drawio (4)](https://github.com/galangbuana/Uas-AplikasiKasir-Backend/assets/162245644/35e69681-e0f9-48c2-be50-3ed23827a141)
 
