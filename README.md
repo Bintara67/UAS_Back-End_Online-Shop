@@ -98,43 +98,58 @@ project sederhana ini merupakan sebuah sistem berbasis web yang memungkinkan pen
 
 ## 🏗️ Gambaran Tech Stack yang digunakan
 
+![alt text](<assets/Screenshot 2024-05-14 100607.png>)
+
 ### Penjelasan
 
 
 Penjelasan singkat mengenai Tech Stack yang digunakan:
 
-- **Apache**: Apache adalah server web open-source yang populer dan digunakan secara luas untuk menghosting aplikasi web. Apache akan digunakan untuk melayani permintaan HTTP dari klien (browser web) dan mentransfer respons yang sesuai. 
-- **Rest API**: Rest API adalah arsitektur gaya arsitektur pemrograman antarmuka yang mendefinisikan seperangkat aturan untuk pertukaran data antara aplikasi web. Rest API akan digunakan untuk mengekspos fungsionalitas sistem manajemen inventaris toko online kepada                     klien, seperti menambahkan produk baru, mengedit informasi produk, dan melihat daftar transaksi. 
-- **PHP**: PHP adalah bahasa pemrograman skrip sisi server yang populer dan digunakan secara luas untuk mengembangkan aplikasi web dinamis. PHP akan digunakan untuk menulis kode backend sistem manajemen inventaris toko online, termasuk logika bisnis, akses database,               dan komunikasi dengan Rest API. 
-- **MySQL**: MySQL adalah sistem manajemen basis data relasional open-source yang populer dan digunakan secara luas untuk menyimpan data aplikasi web. MySQL akan digunakan untuk menyimpan data sistem manajemen inventaris toko online, seperti informasi produk, stok, dan              transaksi.
+- **Apache**: Apache adalah server web open-source yang populer dan digunakan secara luas untuk menghosting aplikasi web. Apache akan digunakan untuk melayani permintaan HTTP dari klien (browser web) dan mentransfer
+              respons yang sesuai. 
+- **Rest API**: Rest API adalah arsitektur gaya arsitektur pemrograman antarmuka yang mendefinisikan seperangkat aturan untuk pertukaran data antara aplikasi web. Rest API akan digunakan 
+                untuk mengekspos fungsionalitas sistem manajemen inventaris toko online kepada klien, seperti menambahkan produk baru, mengedit informasi produk, dan melihat daftar transaksi. 
+- **PHP**: PHP adalah bahasa pemrograman skrip sisi server yang populer dan digunakan secara luas untuk mengembangkan aplikasi web dinamis. PHP akan digunakan untuk menulis kode backend 
+           sistem manajemen inventaris toko online, termasuk logika bisnis, akses database, dan komunikasi dengan Rest API. 
+- **MySQL**: MySQL adalah sistem manajemen basis data relasional open-source yang populer dan digunakan secara luas untuk menyimpan data aplikasi web. MySQL akan digunakan untuk menyimpan 
+             data sistem manajemen inventaris toko online, seperti informasi produk, stok, dan transaksi.
    
 ## 🗃️ ERD
-![Untitled Diagram-Page-14 drawio (4)](https://github.com/galangbuana/Uas-AplikasiKasir-Backend/assets/162245644/35e69681-e0f9-48c2-be50-3ed23827a141)
 
+![alt text](<assets/Screenshot 2024-06-24 143951.png>)
 
-Dengan ERD ini, hubungan antar tabel dalam sistem aplikasi kasir sederhana dapat dipahami dengan jelas.
+Dengan ERD ini, hubungan antar tabel dalam sistem manajemen Toko Online sederhana dapat dipahami dengan jelas.
 
-- **Members**
-  - `member_id (PK)`
-  - `member_name`
-  - `phone_number`
-  - `email`
-  - `join_date`
-- **Products**
-  - `product_id`
-  - `product_name`
+- **Product**
+  - `product_id (PK)`
+  - `name`
+  - `descriptionr`
   - `price`
-  - `stock`
-- **Sales**
-  - `sales_id`
-  - `product_id`
-  - `member_id`
-  - `sale_date`
+  - `category`
+  - `current_stock`
+- **Stock**
+  - `stock_id(PK)`
+  - `product_id(PK)`
   - `quantity`
-  - `selling_price`
+  - `date`
+  - `[user]`
+  - `change_type`
+  - `product_id` REFERENCES `product(product_id)`
+- **Transaction**
+  - `Transaction_id(PK)`
+  - `customer_name`
+  - `date`
+  - `product_id`
+  - `quantity`
   - `total_price`
   - `product_id` REFERENCES `products(product_id)`
-  - `member_id` REFERENCES `members(member_id)`
+- **User**
+  - `user_id (PK)`
+  - `username`
+  - `full_name`
+  - `email`
+  - `password`
+  - `created_at`
 
 Relasi antar tabel-tabel dalam desain database diatas:
 - **Tabel Products** dan **Tabel Sales** memiliki relasi one-to-many. Satu produk bisa terjual dalam banyak penjualan, tetapi setiap penjualan hanya terkait dengan satu produk pada satu waktu. Ini diwakili oleh `id_produk` yang ada di kedua tabel sebagai Foreign Key di Tabel Penjualan.
