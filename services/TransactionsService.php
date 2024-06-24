@@ -44,6 +44,16 @@ class TransactionsService {
         }
     }
 
+        // Menyunting transaksi dengan validasi dan penanganan error
+    public function updateTransaction($transactionId, $updatedData) {
+        try {
+            $result = $this->transactionsModel->updateTransaction($transactionId, $updatedData);
+            return $result;
+        } catch (Exception $e) {
+            throw new Exception("Error updating transaction: " . $e->getMessage());
+        }
+    }
+
     // Menghapus transaksi dengan penanganan error
     public function deleteTransaction($transactionId) {
         try {
