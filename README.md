@@ -102,7 +102,6 @@ project sederhana ini merupakan sebuah sistem berbasis web yang memungkinkan pen
 
 ### Penjelasan
 
-
 Penjelasan singkat mengenai Tech Stack yang digunakan:
 
 - **Apache**: Apache adalah server web open-source yang populer dan digunakan secara luas untuk menghosting aplikasi web. Apache akan digunakan untuk melayani permintaan HTTP dari klien (browser web) dan mentransfer
@@ -152,34 +151,35 @@ Dengan ERD ini, hubungan antar tabel dalam sistem manajemen Toko Online sederhan
   - `created_at`
 
 Relasi antar tabel-tabel dalam desain database diatas:
-- **Tabel Products** dan **Tabel Sales** memiliki relasi one-to-many. Satu produk bisa terjual dalam banyak penjualan, tetapi setiap penjualan hanya terkait dengan satu produk pada satu waktu. Ini diwakili oleh `id_produk` yang ada di kedua tabel sebagai Foreign Key di Tabel Penjualan.
-- **Tabel Members** dan **Tabel Sales** juga memiliki relasi one-to-many. Satu member bisa melakukan banyak penjualan, tetapi setiap penjualan hanya terkait dengan satu member. Ini diwakili oleh `id_member` yang ada di kedua tabel sebagai Foreign Key di Tabel Penjualan.
-- **Tabel Products** tidak langsung terhubung dengan **Tabel Member** melalui relasi database. Namun, mereka terhubung secara tidak langsung melalui Tabel Penjualan. Informasi ini membantu dalam melacak produk apa yang dibeli oleh member tertentu.
+
+One-to-many relationship between product and stock: Setiap produk dapat memiliki beberapa catatan perubahan stok.
+One-to-many relationship between product and transaction: Setiap produk dapat menjadi bagian dari beberapa transaksi.
+(Potential) One-to-many relationship between user and stock: Setiap pengguna dapat membuat beberapa perubahan stok (jika kolom pengguna direferensikan dengan benar ke user_id).
 
 ## ⚙️ Struktur Proyek
 ```sh
-toko-serba-ada/
+/UAS_Back-End_Online-Shop
 ├── app.php
-├── db_kasir.sql
+├── db_onlineShop.sql
 ├── .env
 ├── .htaccess
 ├── config/
 │   ├── database.php
 │   └── table.php
 ├── controllers/
-│   ├── MembersController.php
 │   ├── ProductsController.php
-│   └── SalesController.php
+│   ├── StocksController.php
+│   └── TransactionsController.php
 ├── middleware/
 │   └── Router.php
 ├── models/
-│   ├── MembersModel.php
 │   ├── ProductsModel.php
-│   └── SalesModel.php
+│   ├── StocksModel.php
+│   └── TransactionsModel.php
 └── services/
-    ├── MembersService.php
     ├── ProductsService.php
-    └── SalesService.php
+    ├── StocksService.php
+    └── TransactionsService.php
 ```
 
 ### Penjelasan
