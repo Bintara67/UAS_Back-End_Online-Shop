@@ -122,7 +122,7 @@ Dengan ERD ini, hubungan antar tabel dalam sistem manajemen Toko Online sederhan
 - **Product**
   - `product_id (PK)`
   - `name`
-  - `descriptionr`
+  - `description`
   - `price`
   - `category`
   - `current_stock`
@@ -257,11 +257,11 @@ Langkah-langkah untuk menginstal proyek ini secara lokal:
   - Jalankan XAMPP dan verifikasi bahwa layanan Apache dan MySQL aktif.
   - Tunggu hingga server web lokal dan database MySQL siap digunakan.
     
-4. **Import Database untuk sistem aplikasi kasir sederhana:**
+4. **Import Database untuk sistem manajemen toko online sederhana:**
   - Buka phpMyAdmin, alat bantu web untuk mengelola database MySQL.
   - Pilih database yang ingin Anda gunakan atau buat database baru dengan nama yang sesuai.
   - Impor file `db_onlineshop.sql` ke dalam database yang dipilih.
-  - Alternatively, jalankan query SQL dari file `db_onlineshop.sql` untuk membuat database dan tabel yang diperlukan secara manual.
+  - Alternatif, jalankan query SQL dari file `db_onlineshop.sql` untuk membuat database dan tabel yang diperlukan secara manual.
   - Pastikan proses import database berhasil dan semua tabel dan data telah termuat dengan benar.
 
 5. **Buat file `.env` di direktori root proyek dan tambahkan konfigurasi database Anda:**
@@ -308,7 +308,7 @@ Selama proses membuat sistem manajemen toko online sederhana ini, saya menghadap
 
 ## Pembelajaran dan Peningkatan Diri
 
-Saya banyak belajar tentang pentingnya perencanaan yang matang dan desain arsitektur yang baik selama proses pengembangan ini. Selain itu, saya menyadari bahwa keamanan aplikasi dan pengelolaan konfigurasi lingkungan merupakan komponen yang sangat penting yang tidak boleh diabaikan. Selain itu, saya memperoleh pengalaman berharga dalam pengujian dan debugging berbagai alat dan teknik, yang sangat membantu dalam menjamin kualitas dan stabilitas aplikasi.
+Saya banyak belajar tentang pentingnya perencanaan yang matang dan desain arsitektur yang baik selama proses pengembangan ini. Selain itu, saya menyadari bahwa keamanan aplikasi dan pengelolaan konfigurasi lingkungan merupakan komponen yang sangat penting yang tidak boleh diabaikan. Selain itu, saya memperoleh pengalaman berharga dalam pengujian dan debugging berbagai alat dan teknik, yang sangat membantu dalam menjamin kualitas dan stabilitas sistem.
 
 Ke depannya, saya berharap dapat memperluas keterampilan saya dalam mengembangkan aplikasi web yang lebih kompleks dan canggih dan memanfaatkan pengetahuan dan pengalaman yang saya peroleh dari proyek ini untuk proyek lain.
 
