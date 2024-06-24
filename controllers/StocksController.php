@@ -1,11 +1,12 @@
 <?php
 require_once 'services/StocksService.php';
-
+require_once 'models/StocksModel.php';
 class StocksController {
     private $stocksService;
 
     public function __construct($dbConnection) {
-        $this->stocksService = new StocksService($dbConnection);
+        $stocksModel = new StocksModel($dbConnection);
+        $this->stocksService = new StocksService($stocksModel);
     }
 
     public function getAllStocks($limit = 10, $offset = 0) {

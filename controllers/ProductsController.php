@@ -5,7 +5,8 @@ class ProductsController {
     private $productsService;
 
     public function __construct($dbConnection) {
-        $this->productsService = new ProductsService($dbConnection);
+        $productsModel = new ProductsModel($dbConnection);
+        $this->productsService = new ProductsService($productsModel);
     }
 
     public function getAllProducts($limit = 10, $offset = 0) {

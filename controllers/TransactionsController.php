@@ -1,11 +1,12 @@
 <?php
 require_once 'services/TransactionsService.php';
-
+require_once 'models/TransactionsModel.php';
 class TransactionsController {
     private $transactionsService;
 
     public function __construct($dbConnection) {
-        $this->transactionsService = new TransactionsService($dbConnection);
+        $transactionsModel = new TransactionsModel($dbConnection);
+        $this->transactionsService = new TransactionsService($transactionsModel);
     }
 
     public function getAllTransactions($limit = 10, $offset = 0, $filter = []) {
